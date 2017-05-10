@@ -1,0 +1,860 @@
+ \documentclass[11pt]{article}
+\usepackage{amsmath, amssymb,verbatim,appendix}
+\usepackage[mathscr]{eucal}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{enumerate}
+\usepackage{comment}
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{cite}
+\usepackage{url}
+\usepackage[margin=1in]{geometry}
+
+
+\AtBeginDocument{%
+   \def\MR#1{}
+}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{notation}{Notation}
+\newtheorem{question}{Question}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{problem}{Problem}
+\newtheorem{observation}{Observation}
+\newtheorem{sublemma}[theorem]{Sublemma}
+\newtheorem{counterexample}[theorem]{Counterexample}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{claim}{Claim}
+\newtheorem{fact}{Fact}
+\newtheorem{questions}[theorem]{Question}
+\newtheorem{idea}[theorem]{Idea}
+\newtheorem*{theorem1}{Theorem 1}
+\newtheorem*{theorem2}{Theorem 2}
+\newtheorem*{theorem3}{Theorem 3}
+\newtheorem*{theorem4}{Theorem 4}
+\newtheorem*{theorem5}{Theorem 5}
+\newtheorem*{theorem6}{Theorem 6}
+\newtheorem*{theorem7}{Theorem 7}
+\newtheorem*{theorem8}{Theorem 8}
+\newtheorem*{theorem9}{Theorem 9}
+\newtheorem*{corollary2}{Corollary 2}
+\newtheorem*{corollary4}{Corollary 4}
+\newtheorem*{corollary1}{Corollary 1}
+\newtheorem*{lemma1}{Lemma 1}
+\newtheorem*{lemma2}{Lemma 2}
+\newtheorem*{stability}{Stability Theorem}
+\newtheorem*{enumerationtheorem}{enumerationtheorem}
+\newtheorem*{theorem01}{Theorem 7}
+
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+
+
+\newcommand{\abar}{\bar{a}}
+\newcommand{\bbar}{\bar{b}}
+\newcommand{\cbar}{\bar{c}}
+\newcommand{\dbar}{\bar{d}}
+\newcommand{\ebar}{\bar{e}}
+\newcommand{\fbar}{\bar{f}}
+\newcommand{\gbar}{\bar{g}}
+\newcommand{\ibar}{\bar{i}}
+\newcommand{\jbar}{\bar{j}}
+\newcommand{\kbar}{\bar{k}}
+\newcommand{\lbar}{\bar{\ell}}
+\newcommand{\mbar}{\bar{m}}
+\newcommand{\nbar}{\bar{n}}
+\newcommand{\oobar}{\bar{o}}
+\newcommand{\pbar}{\bar{p}}
+\newcommand{\qbar}{\bar{q}}
+\newcommand{\rbar}{\bar{r}}
+\newcommand{\sbar}{\bar{s}}
+\newcommand{\tbar}{\bar{t}}
+\newcommand{\ubar}{\bar{u}}
+\newcommand{\vbar}{\bar{v}}
+\newcommand{\wbar}{\bar{w}}
+\newcommand{\xbar}{\bar{x}}
+\newcommand{\ybar}{\bar{y}}
+\newcommand{\zbar}{\bar{z}}
+\newcommand{\Abar}{\bar{A}}
+\newcommand{\Ebar}{\bar{E}}
+\newcommand{\Bbar}{\bar{B}}
+\newcommand{\Cbar}{\bar{C}}
+\newcommand{\Dbar}{\bar{D}}
+\newcommand{\Fbar}{\bar{F}}
+\newcommand{\Gbar}{\bar{G}}
+\newcommand{\Hbar}{\bar{H}}
+\newcommand{\Ibar}{\bar{I}}
+\newcommand{\Jbar}{\bar{J}}
+\newcommand{\Kbar}{\bar{K}}
+\newcommand{\Lbar}{\bar{L}}
+\newcommand{\Mbar}{\bar{M}}
+\newcommand{\Nbar}{\bar{N}}
+\newcommand{\Obar}{\bar{O}}
+\newcommand{\Pbar}{\bar{P}}
+\newcommand{\Qbar}{\bar{Q}}
+\newcommand{\Rbar}{\bar{R}}
+\newcommand{\Sbar}{\bar{S}}
+\newcommand{\Tbar}{\bar{T}}
+\newcommand{\Ubar}{\bar{U}}
+\newcommand{\Vbar}{\bar{V}}
+\newcommand{\Wbar}{\bar{W}}
+\newcommand{\Xbar}{\bar{X}}
+\newcommand{\Zbar}{\bar{Z}}
+\newcommand{\Ybar}{\overline{Y}}
+\newcommand{\tildeM}{\tilde{M}}
+\newcommand{\tildeC}{\tilde{C}}
+
+
+\newcommand{\prob}{\textnormal{prob}}
+\newcommand{\diff}{\textnormal{diff}}
+\newcommand{\cop}{\textnormal{cop}}
+\newcommand{\dist}{\textnormal{dist}}
+\newcommand{\ex}{\textnormal{ex}}
+\newcommand{\FLAW}{\textnormal{FLAW}}
+\newcommand{\VC}{\textnormal{VC}}
+
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calJ}{\mathcal{J}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calW}{\mathcal{W}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calY}{\mathcal{Y}}
+\newcommand{\calZ}{\mathcal{Z}}
+
+\newcommand{\tildeG}{\tilde{G}}
+\newcommand{\tildeH}{\tilde{H}}
+\newcommand{\tildeV}{\tilde{V}}
+\newcommand{\tildeW}{\tilde{W}}
+\newcommand{\tildeE}{\tilde{E}}
+\newcommand{\tildeX}{\tilde{X}}
+\newcommand{\tildeY}{\tilde{Y}}
+\newcommand{\tildeZ}{\tilde{Z}}
+
+
+\newcommand{\exs}{{\rm{ex}}_{\Sigma}}
+\newcommand{\expi}{{\rm{ex}}_{\Pi}}
+\newcommand{\sub}{{\rm{sub}}}
+
+
+\def\Aut{\operatorname{Aut}}
+\def\tp{\operatorname{tp}}
+\def\dom{\operatorname{dom}}
+\def\SOP{\operatorname{SOP}}
+\def\Th{\operatorname{Th}}
+\def\Med{\operatorname{Med}}
+\def\EM{\operatorname{EM}}
+\def\mymod{{\;\mbox{mod}\;}}
+\def\Forb{\operatorname{Forb}}
+
+
+
+
+
+
+\title{
+Stable arithmetic regularity in $\mathbb{Z}/p\mathbb{Z}$ for now.
+}
+
+
+
+%Author info
+\author{
+}
+%University of Illinois at Chicago\\
+%cterry3@uic.edu
+%}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+
+\section{basic definitions}
+
+
+\begin{definition}
+A graph $(V,E)$ has the \emph{$k$-order property} if there exist $a_1,\ldots, a_k,b_1,\ldots, b_k\in V$ such that $a_ib_j\in E$ if and only if $i\leq j$. If $(V,E)$ does not have the $k$-order property, then it is \emph{$k$-stable}.
+\end{definition}
+
+Assume $G$ is an abelian group.  
+\begin{definition}
+Given $A\subseteq G$, say $A$ is \emph{$k$-stable} if the graph $(G,\{xy: x+y\in A\})$ is $k$-stable.  We say $A$ \emph{has the $k$-order property} if the graph $(G,\{xy: x+y\in A\})$ has the $k$-order property.
+\end{definition}
+
+Observe that if $A$ is $1$-stable, then either $A=G$ or $A=\emptyset$.  Since this is not interesting, we will throughout restrict to the case where $k\geq 2$. Given $A\subseteq G$, we are interested in understanding the graph $\Gamma_A:=(G,\{xy: x+y\in A\})$.  In particular our goal is to show that if $\Gamma_A$ is $k$-stable, then one can prove a version of Szermeredi's regularity lemma where the parts have the additional structure of all being approximately translates of a Bohr set of bounded parameters.  We will obtain sharper results when $G$ is of the form $\mathbb{F}_p^n$ for a fixed prime $p$ and large $n$.  
+
+We now go over some preliminaries. Suppose $G$ is a finite abelian group.  Then $\widehat{G}$ denotes the group of characters of $G$, that is, the set of homomorphisms from $G$ into $\mathbb{T}=\{z\in \mathbb{C}: |z|=1\}$.  Given $f:G\rightarrow \mathbb{C}$ and $\gamma\in \widehat{G}$, recall 
+$$
+\widehat{f}(\gamma)=\mathbb{E}_{x\in G} f(x)\gamma(x).
+$$
+
+
+
+\section{excellence}
+Suppose $G$ is an abelian group, $A, B\subseteq G$, and $y\in G$.  Define $A^{y}_B(x)=(A+y)(x)B(x)=1_{B\cap (A+y)}(x)$. 
+
+\begin{definition}
+Suppose $A, B\subseteq G$, and $y\in G$.  We say $y$ is \emph{$\epsilon$-regular for $B$ with respect to $A$} if $\sup_{t\neq 0}|\widehat{A_B^{-y}}(t)|\leq \epsilon |B|$.
+\end{definition}
+
+The set $A$ will often be a fixed distinguished set.  In this case, we will just refer to $y$ as $\epsilon$-regular for $B$.
+
+\begin{definition}
+Suppose $A, B\subseteq G$.  We say $B$ is \emph{totally $\epsilon$-regular for $A$} if every $y\in G$ is $\epsilon$-regular for $B$ with respect to $A$.  In other words, if $|\widehat{A_B^{-y}}(t)|\leq \epsilon|B|$ for all $y\in G$ and $t\neq 0$.
+\end{definition}
+
+The goal of this paper is to show that when $A$ is $k$-stable for some $k\geq 2$, then we can find a totally $\epsilon$-regular set $B$ with nice structural properties.  In particular, when $G=\mathbb{F}_p^n$, $B$ will be a subgroup of index bounded by $C(1/\epsilon)$, where $C=C(k)$ is some constant depending on $k$.  When $G=\mathbb{Z}_N$, $B$ will be a Bohr set $B=B(K,\rho)$ where $|K|$ and $\rho$ are bounded in terms of functions of $k$. In fact we will prove something even stronger.  
+
+\begin{definition}
+Suppose $A, B\subseteq G$, and $y\in G$. Then $g$ is \emph{$\epsilon$-good for $B$} if $|(A-g)\cap B|\leq \epsilon |B|$ or $|B\setminus (A-g)|\leq \epsilon |B|$. We say $B$ is \emph{$\epsilon$-excellent} if $y$ is $\epsilon$-good for $B$, for all $y\in G$.
+\end{definition}
+
+
+\section{things we'll need about Bohr sets}
+In this section we state facts and definitions we will need about Bohr sets.  Most of this section come from \cite{GW2011} and Tao and Vu.  Assume for this section that $G$ is a finite abelian group.  Given $K\subseteq \widehat{G}$ and $\rho\in [0,1]$, define 
+$$
+B(K,\rho)=\{x\in G: |\gamma(x)-1|\leq \rho \text{ for all $\gamma\in K$}\}.
+$$
+A set of the form $B(K,\rho)$ is called a \emph{Bohr set}.  Observe a Bohr set is always symmetric (CHECK IT IS TRUE).  Observe that in $\mathbb{F}_p^n$, if $\rho<1/p$, then $B(K,\rho)$ is the subgroup $\langle K\rangle ^{\perp}$. We say a Bohr set $B=B(K,\rho)$ is \emph{regular} if for all $\epsilon \in (0,1/100|K|)$, 
+$$
+|B(K,\rho(1+\epsilon))|\leq |B|(1+100|K|\epsilon) \text{ and }|B(K,\rho(1-\epsilon))|\geq |B|(1-100|K|\epsilon) 
+$$
+
+\begin{lemma}[Lemma 4.25 in Tao and Vu]\label{lemma2.1}
+Given $K\subseteq G$ and $\rho>0$, there is $\rho'\in [\rho, 2\rho]$ such that $B(K,\rho')$ is regular.
+\end{lemma}
+
+\begin{definition}
+Given $\epsilon>0$ and Bohr sets $B=B(K,\rho)$, $B'=B(K,\sigma)$, we write $B'\prec_{\epsilon}B$ if $B$ and $B'$ are both regular, and $\sigma \in [\epsilon \rho/400|K|, \epsilon \rho/200|K|]$.  We let $B^+=B(K,\rho +\sigma)$ and $B^-=B(K,\rho -\sigma)$.
+\end{definition}
+
+Observe that if $B=B(K,\rho)$, $B'=B(K,\sigma)$, and $B'\prec_{\epsilon}B$, then $B'+B\subseteq B^+$ and $|(B'+B)\Delta B^+|\leq ?$.
+
+
+
+Given $x,y\in \mathbb{R}$ and $\epsilon>0$, we write $x\approx_{\epsilon}y$ to mean $|x-y|\leq \epsilon$.  
+
+\begin{lemma}[Lemma 2.3 from \cite{GW2011}]
+Suppose $\epsilon>0$ and $B=B(K,\rho)$ is a regular Bohr set.  Suppose $B'=B(K,\sigma)\prec_{\epsilon}B$ and $B^+=B(K,\rho+\sigma)$. Then for every function $f:G\rightarrow \mathbb{C}$ such that $||f||_{\infty}\leq 1$ the following holds.
+\begin{enumerate}
+\item $\mathbb{E}_{x\in B}f(x) \approx_{\epsilon} \mathbb{E}_{x\in B}\mathbb{E}_{y\in P} f(x+y)$ for every subset $P\subseteq B'$. \label{lemmapart1}
+\item $\mathbb{E}_{x\in B}f(x) \approx_{\epsilon}\mathbb{E}_{x\in B^{+}}f(x)$. \label{lemmapart2}
+\end{enumerate}
+\begin{proof}
+Redo 1 or say its the same as Lemma 2.3 in \cite{GW2011}.
+
+We prove (\ref{lemmapart2}).  By definition, $B\subseteq B^{+}$, thus $|B|\leq |B^+|$.  Since $0<\sigma <\epsilon \rho/200|K|$ and $B$ is regular, $|B^+|\leq (1+\epsilon /2)|B|$.  Now observe
+\begin{align*}
+\Big|\mathbb{E}_{x\in B^+}f(x) -\mathbb{E}_{x\in B}f(x)\Big|&=\Big|\frac{1}{|B^+|}\sum_{x\in B^+\setminus B}f(x) +\Big(\frac{1}{|B^+|}-\frac{1}{|B|}\Big)\sum_{x\in B}f(x)\Big|\\
+&\leq \Big|\frac{1}{|B^+|}\sum_{x\in B^+\setminus B}f(x)\Big| +\Big|\frac{1}{|B^+|}-\frac{1}{|B|}\Big|\Big|\sum_{x\in B}f(x)\Big|\\
+&\leq \frac{|B^+\setminus B|}{|B^+|} +\frac{||B|-|B^+||}{|B^+||B|}|B|\\
+&=2\frac{|B^+\setminus B|}{|B^+|}\\
+&= 2\frac{|B^+\setminus B|}{|B^+|} +\frac{||B|-|B^+||}{|B^+||B|}|B|\\
+&\leq \epsilon.
+\end{align*}
+\end{proof}
+\end{lemma}
+
+\begin{observation}
+If $G=\mathbb{F}_p^n$ then in the above we can take $\epsilon$ and $\rho$ small so that equalities all hold.
+\end{observation}
+
+\section{regular pairs}
+
+We begin with a lemma which says regular pairs in stable graphs must have density close to $0$ or $1$. Given a graph $G=(V,E)$, and $x\in V$, $N(x)=\{v\in V: xv\in E\}$, and $d(x)=|N(x)|$.  If $Y\subseteq V$, then $d_Y(x)=|N(x)\cap Y|$ and $\neg Y=V\setminus Y$.  We will use the following.
+
+\begin{fact}\label{fact0}
+Suppose $k\geq 2$ is an integer. If $\epsilon<(1/2)^k$, then $\epsilon^{\frac{1}{k}}-\epsilon>\epsilon^{\frac{2}{k}}$.
+\end{fact}
+\begin{proof}
+Set $\eta=\epsilon^{1/k}$.  Since $\epsilon<(1/2)^k$, $\eta<1/2$.  We want to show $\eta -\eta^k \geq \eta^2$.  This is equivalent to showing $\eta -\eta^2\geq \eta^k$.  Since $\eta<1/2$, we have $\eta>2\eta^2$, which implies $\eta -\eta^2>\eta^2$. Since $k\geq 2$, we thus have $\eta -\eta^2>\eta^2\geq \eta^k$.
+\end{proof}
+
+\begin{lemma}\label{lemma1}
+For all $t\geq 1$ and $0<\epsilon<(1/2)^{2t+2}$, there is $m=m(t,\epsilon)$ such that the following holds.  Suppose $G=(V,E)$ is a $t$-stable graph and $X, Y\subseteq V$ satisfy that $|X|=|Y|\geq m$ and that $(X,Y)$ is $\epsilon$-regular.  Then $d(X,Y)\leq \epsilon^{\frac{1}{2t+2}}$ or $d(X,Y)\geq 1-\epsilon^{\frac{1}{2t+2}}$.
+\end{lemma}
+\begin{proof}
+Let $k=2t+2$.  Fix $m>k/2-2$ sufficiently large so that for all $n\geq \epsilon m$, $(\epsilon^{1/k}-\epsilon)n-1\geq \epsilon^{2/k}n$, and for all $n\geq \epsilon^{2(t-1)/k}m$, $n-1\geq \epsilon m$.  Such an $m$ exists because of Fact \ref{fact0}. Suppose towards a contradiction $X, Y\subseteq V$ satisfy that $|X|=|Y|\geq m$, that $(X,Y)$ is $\epsilon$-regular, and that $\epsilon^{\frac{1}{k}} < d(X,Y)< 1-\epsilon^{\frac{1}{k}}$.  We build by induction a sequence $x_1,\ldots, x_t,y_1,\ldots, y_t$ that is a half-graph.
+
+Since $d(X,Y)>\epsilon^{\frac{1}{k}}$, there is $x_1\in X$ such that $d_Y(x)\geq \epsilon^{\frac{1}{k}} |Y|$.  Let $Y_1=N(x)\cap Y$ and let $Z=X\setminus \{x_1\}$.  Because $m$ is large, because $\epsilon<\epsilon^{1/4}$, and by definition of $Z,Y_1$, we have that $|Y_1|\geq \epsilon|Y|$, $|Z|=|X|-1\geq \epsilon |X|$.  Thus since $(X,Y)$ is $\epsilon$-regular, 
+$$
+d(Z,Y_1)\leq d(X,Y)+\epsilon\leq 1-\epsilon^{\frac{1}{k}}+\epsilon.
+$$
+Thus there is $y_1\in Y_1$ such that $|Z\setminus N(y_1)|\geq (\epsilon^{\frac{1}{k}}-\epsilon)|Z|$.  Let $X_1=Z\setminus N(y_1)$.  Note $|Y_1|\geq \epsilon^{\frac{1}{k}} |Y|$ and $|X_1|\geq (\epsilon^{\frac{1}{k}}-\epsilon)(|X|-1)\geq \epsilon^{\frac{2}{k}}|X|$, where the last inequality follows from our assumption on $m$ and because $|X|-1\geq \epsilon m$.
+
+Assume now $1\leq i<t$ and suppose by induction we have constructed $x_1,\ldots, x_i,y_1,\ldots, y_{i}$ and sets $X_i\subseteq X$, $Y_i\subseteq Y$ such that the following hold.
+\begin{enumerate}
+\item  $|X_i|\geq \epsilon^{2i/k}|X|$ and $|Y_i|\geq \epsilon^{(2i-1)/k}|Y|$,
+\item $x_i\in X_i$, $y_i\in Y_i$,
+\item  for each $1\leq j, s\leq i$, $x_jy_s\in E$ if and only if $j\leq s$,
+\item $Y_i\subseteq N(x_1)\cap \ldots \cap N(x_i)\cap Y$, $X_i\subseteq X\setminus (N(y_1)\cup \ldots \cup N(y_{i}))$.
+\end{enumerate}
+Since (1) holds and $(X,Y)$ is $\epsilon$-regular, we have that 
+$$
+d(X_i,Y_i)\geq d(X,Y)-\epsilon > \epsilon^{1/k} -\epsilon.
+$$
+Thus there is $x_{i+1}\in X_i$ such that 
+$$
+|N(x_{i+1})\cap Y_i|\geq (\epsilon^{1/k}-\epsilon)|Y_i|\geq (\epsilon^{1/k}-\epsilon)\epsilon^{(2i-1)/k}|Y|>(\epsilon^{2/k})\epsilon^{(2i-1)/k}|Y|=\epsilon^{(2(i+1)-1)/k}|Y|\geq \epsilon |Y|,
+$$
+where the second to last inequality is by Fact \ref{fact0}, and the last inequality is because $i<t$ implies $(2(i+1)-1)/k\leq 1$. Let $Y_{i+1}=N(x_{i+1})\cap Y_i$.  Let $Z=X_i\setminus \{x_{i+1}\}$.  Note $|Z|=|X_{i}|-1\geq \epsilon^{2i/k}|X|-1\geq \epsilon |X|$ because of our choice of $m$, and because $\epsilon^{2i/k}\geq \epsilon^{2(t-1)/k}$ (since $i<t$).  Thus, $|Z|\geq \epsilon |X|$ and $|Y_{i+1}|\geq \epsilon |Y|$, so by $\epsilon$-regularity of $(X,Y)$, we have
+$$
+d(Z,Y_{i+1})\leq d(X,Y)+\epsilon < 1-\epsilon^{1/k}+\epsilon.
+$$
+Thus there is $y_{i+1}\in Y_{i+1}$ such that $|Z\setminus N(y_{i+1})|\geq (\epsilon^{1/k}-\epsilon)|Z|$.  Set $X_{i+1}=Z\setminus N(y_{i+1})$.  By definition of $X_{i+1}$ and our induction hypothesis we have
+\begin{align*}
+|X_{i+1}|\geq (\epsilon^{1/k}-\epsilon)|Z|\geq (\epsilon^{1/k}-\epsilon)(|X_i|-1)\geq (\epsilon^{1/k}-\epsilon)(\epsilon^{2i/k}|X|-1)&\geq \epsilon^{2/k}(\epsilon^{2i/k}|X|)\\
+&=\epsilon^{2(i+1)/k}|X|,
+\end{align*}
+where the last inequality is because of our assumption on $m$, and because $\epsilon^{2(i+1)/k}|X|\geq \epsilon m$ (since $i+1\leq t$ imples $2(i+1)/k\geq 1$).  This finishes the inductive step of our construction.  At the end we have built $x_1,\ldots, x_t, y_1,\ldots, y_t$ such that $x_iy_j\in E$ if and only if $i\leq j$, contradicting that $G$ is $t$-stable.  
+\end{proof}
+
+We now prove a lemma which allows us to move between the graph and group setting.  Recall that if $A\subseteq \mathbb{Z}/p\mathbb{Z}$, then $\Gamma_A=(\mathbb{Z}/p\mathbb{Z},\{xy: x+y\in A\})$. 
+
+\begin{claim}\label{claim}
+Suppose $G$ is a finite abelian group and $U,V,W$ are functions from $G$ to $\mathbb{C}$.  Then the following holds. 
+$$
+\frac{1}{|G|^2}\sum_{u,v\in G}W(-u-v)U(u)V(v)=\sum_{\gamma\in \widehat{G}}\widehat{W}(\gamma)\widehat{U}(\gamma)\widehat{V}(\gamma).
+$$
+\end{claim}
+\begin{proof}
+Note 
+\begin{align*}
+\sum_{\gamma\in \widehat{G}}\widehat{W}(\gamma)\widehat{U}(\gamma)\widehat{V}(\gamma)&=\sum_{\gamma \in \widehat{G}}\Big(\frac{1}{|G|}\sum_{t\in G}W(t)\gamma(t)\Big)\Big(\frac{1}{|G|}\sum_{u\in G}U(u)\gamma(u)\Big)\Big(\frac{1}{|G|}\sum_{v\in G}V(v)\gamma(v)\Big)\\
+&=\frac{1}{|G|^3}\sum_{\gamma \in \widehat{G}}\sum_{t,u,v\in G}W(t)U(u)V(v)\gamma(t+u+v)\\
+&=\frac{1}{|G|^3}\sum_{t,u,v\in G}W(t)U(u)V(v)\sum_{\gamma \in \widehat{G}}\gamma(t+u+v).
+\end{align*}
+Now recall that if $t+u+v\neq 0$, then $\sum_{\gamma \in \widehat{G}}\gamma(t+u+v) =0$ and if $t+u+v=0$ then $\sum_{\gamma \in \widehat{G}}\gamma(t+u+v)=|G|$.  Therefore we have
+\begin{align*}
+\frac{1}{|G|^3}\sum_{t,u,v\in G}W(t)U(u)V(v)\sum_{\gamma \in \widehat{G}}\gamma(t+u+v)&=\frac{1}{|G|^3}\sum_{ t+u+v=0}W(t)U(u)V(v)|G|\\
+&=\frac{1}{|G|^2}\sum_{u,v\in G}W(-u-v)U(u)V(v).
+\end{align*}
+\end{proof}
+
+\begin{fact}
+Suppose $A\subseteq G$ and $B=B(K,\rho)$ is a Bohr set.  Then 
+$$
+\frac{|A\cap B|}{|B|}=\frac{|(-A)\cap B|}{|B|}.
+$$
+\end{fact}
+\begin{proof}
+Since $B$ is a Bohr set, $B$ is symmetric.  Thus the map $h$ which sends $a\in A\cap B$ to $-a$ is a map from $A\cap B$ to $(-A)\cap B$.  Clearly this map in injective.  We show it is surjective.  Suppose $-a\in (-A)\cap B$. Then $a\in A$ and since $B$ is symmetric, $-a\in B$ implies $a\in B$.   Thus $a\in A\cap B$, and we are done.
+\end{proof}
+
+
+\begin{lemma}[new version]\label{reg}
+Suppose $G$ is an abelian group, $\epsilon>0$, $A\subseteq G$, $y\in G$, and $B'\prec_{\epsilon^2} B$ are Bohr sets.  Let $\alpha = |(A-y)\cap B|/|B|$ and suppose that $f(x)=(-A)^{+y}_B(x)\mu_B(x)-\alpha \mu_B(x)$ satisfies $\sup_{t\neq 0}|\widehat{f}(t)|\leq \epsilon^2$.  Then $(B',B+y)$ is an $\epsilon$-regular pair in $\Gamma_A$ and $|d(B',B+y)-\alpha|\leq \epsilon$. 
+\end{lemma}
+\begin{proof}
+Throughout, we will use $B^+$ as in Definition ? in case 2, and $B^+=B=B'$ in case 1, so that in both cases, $B'+B\subseteq B^+$.  We first show the assertions concerning $d(B',B+y)$ and $\alpha$.  Observe
+\begin{align}\label{count}
+|d(B',B+y)|&=\frac{\sum_{b'\in B'} |N(b')\cap (B+y)|}{|B||B'|}=\frac{\sum_{b'\in B'} |B\cap (A-y-b')|}{|B||B'|}\\
+&=\mathbb{E}_{b\in B}\mathbb{E}_{b'\in B'}(A-y)(b+b')\approx_{\epsilon} \mathbb{E}_{b\in B}(A-y)(b)=\alpha,
+\end{align}
+where the $\approx_{\epsilon}$ comes from Lemma \ref{lemma2.3} part (1).  We now prove the assertions concerning the regularity of the pair $(B',B+y)$.  Suppose $U\subseteq B'$, $V\subseteq B$ satisfy $|U|\geq \sqrt{\epsilon}|B'|$ and $|V|\geq \sqrt{\epsilon}|B|$.  By what we have already shown, 
+\begin{align*}
+|d(U,V+g)-d(B',B+g)|&=|d(U,V+g)-\alpha+\alpha-d(B',B+g)|\\
+&\leq |d(U,V+g)-\alpha|+|\alpha-d(B',B+g)|\leq |d(U,V+g)-\alpha|+\epsilon.
+\end{align*}
+Therefore, it suffices to show $|d(U,V+g)-\alpha|\leq \sqrt{\epsilon}$.  Let $h(x)=(-A)_{B^+}^{+y}(x)-\alpha B^+(x)$.  Note that $f(x)=h(x)\mu_B(x)$.  Note
+\begin{align*}
+d(U,V+g)&=\frac{1}{|U||V|}\sum_{u,v\in G}A^{-g}(u+v)U(u)V(v)=\frac{1}{|U||V|}\sum_{u,v\in G}A_{B^+}^{-g}(u+v)U(u)V(v).
+\end{align*}
+where the second inequality is because $V\subseteq B$ and $U\subseteq B'$ implies $U+V\subseteq B'+B\subseteq B^+$. Thus we have the following.
+\begin{align*}
+|d(U,V+g)-\alpha|&=\frac{1}{|U||V|}\Big|\sum_{u,v\in G}(A^{-y}(u+v)U(u)V(v)-\alpha U(u)V(v))\Big|\\
+&=\frac{1}{|U||V|}\Big|\sum_{u,v\in G}A_{B^+}^{-y}(u+v)U(u)V(v)-\alpha B^{+}(u+v)U(u)V(v)\Big|\\
+&= \frac{1}{|U||V|}|\sum_{u,v\in G}|(A_{B^+}^{-y}(u+v)-\alpha B^{+}(u+v))U(u)V(v)|.
+\end{align*}
+Observe that for any $u,v\in G$, $B^+(u+v)=B^+(-u-v)$ because $B^+$ is thus symmetric, and by definition,  $A_{B^+}^{-y}(u+v)=(-A)_{B^+}^{+y}(-u-v)$.  Consequently we have the following.
+\begin{align*}
+& \frac{1}{|U||V|}|\sum_{u,v\in G}|A_{B^+}^{-y}(u+v)-\alpha B^{+}(u+v))U(u)V(v)|\\
+&= \frac{1}{|U||V|}|\sum_{u,v\in G}((-A)_{B^+}^{+y}(-u-v)-\alpha B^{+}(-u-v))U(u)V(v)|\\
+&= \frac{1}{|U||V|}|\sum_{u,v\in G}h(-u-v)U(u)V(v)|= \frac{|G|^2}{|U||V|}|\sum_{\gamma \in \widehat{G}}\widehat{h}(\gamma)\hat{U}(\gamma)\hat{V}(\gamma)|\\
+&\leq \frac{|G|^2}{|U||V|}\sum_{\gamma \in \widehat{G}}|\widehat{h}(\gamma)\hat{U}(\gamma)\hat{V}(\gamma)|
+\end{align*}
+where the last equality is by Claim \ref{claim}.  We first bound the term where $\gamma=\mathbf{1}$ is the constant function sending everything to $1$. Observe
+\begin{align*}
+\frac{|G|^2}{|U||V|}|\widehat{h}(\mathbf{1})\widehat{U}(\mathbf{1})\widehat{V}(\mathbf{1})|&=\frac{|G|^2}{|U||V|}\Big|\Big(\frac{1}{|G|}\sum_{x \in G}((-A)_{B^+}^{+y}-\alpha B^{+})(x)\Big)\Big(\frac{1}{|G|}\sum_{x \in G}U(x)\Big)\Big(\frac{1}{|G|}\sum_{x \in G}V(x)\Big)\Big|\\
+&=\frac{||(-A+y)\cap B^{+}|-\alpha |B^+||}{|G|}=\frac{||(A-y)\cap B^{+}|-\alpha |B^+||}{|G|}\\
+&\leq \Bigg|\frac{|(A-y)\cap B^{+}|}{|B^+|}-\alpha\Bigg|.
+\end{align*}
+Note $\frac{|(A-y)\cap B^{+}|}{|B^+|}=\mathbb{E}_{x\in B^+}(A-y)(x)$ and $\alpha=\mathbb{E}_{x\in B}(A-y)(x)$.  Thus by Lemma \ref{lemma2.3} part (1), and the above, $\frac{|G|^2}{|U||V|}|\widehat{h}(\mathbf{1})\widehat{U}(\mathbf{1})\widehat{V}(\mathbf{1})|\leq |\frac{|(A-y)\cap B^{+}|}{|B^+|}-\alpha|\leq \epsilon$. We now bound the terms in \ref{label it} where $\gamma \neq \mathbf{1}$.  Observe now that 
+\begin{align*}
+\frac{|G|^2}{|U||V|}\Big|\sum_{\gamma \neq \mathbf{1} }\widehat{h}(\gamma)\hat{U}(\gamma)\hat{V}(\gamma)\Bigg|&=\frac{\beta^+|G|^2}{|U||V|}\Big|\sum_{\gamma \neq 0 } \widehat{h\mu_{B^+}}(\gamma)\hat{U}(\gamma)\hat{V}(\gamma)\Bigg|\leq \frac{\beta^+ |G|^2}{|U||V|}\sup_{\gamma \neq 0}|\widehat{h\mu_{B^+}}(\gamma)|\Big|\sum_{\gamma \neq 0 }\hat{U}(\gamma)\hat{V}(\gamma)\Bigg|\\
+&\leq \frac{\beta^+ |G|^2}{|U||V|}\sup_{\gamma \neq 0}|\widehat{h\mu_{B^+}}(\gamma)|||\widehat{U}||_2||\widehat{V}||_2=\frac{\beta^+ |G|^2}{|U||V|}\sup_{\gamma \neq 0}|\widehat{h\mu_{B^+}}(\gamma)| \sqrt{|U|/|G|}\sqrt{|V|/|G|} \\
+&=\frac{\beta^+ |G|}{|U|^{1/2}|V|^{1/2}}\sup_{\gamma \neq 0}|\widehat{h\mu_{B^+}}(\gamma)| =\frac{|B^+|}{|U|^{1/2}|V|^{1/2}}\sup_{\gamma \neq 0}|\widehat{h\mu_{B^+}}(\gamma)|.
+\end{align*}
+
+Now observe that for all $\gamma \neq \mathbf{1}$, 
+\begin{align*}
+\widehat{h\mu_{B^+}}(\gamma)=\mathbb{E}_{x\in G}h(x)\mu_{B^+}(x) \gamma(x)=\mathbb{E}_{x\in B^+}h(x)\gamma(x),
+\end{align*}
+and
+\begin{align*}
+\widehat{f}(\gamma)=\mathbb{E}_{x\in G}h(x)\mu_B(x) \gamma(x)=\mathbb{E}_{x\in B}h(x)\gamma(x).
+\end{align*}
+Thus by Lemma \ref{lemma2.3} part (2), $|\widehat{h\mu_{B^+}}(\gamma)-\widehat{f}(\gamma)|\leq \epsilon^2$. Combining this with our assumptions yields that $\sup_{\gamma \neq \mathbf{1}}|\widehat{h\mu_{B^+}}(\gamma)|\leq 2\epsilon^2$.  Thus we have that 
+\begin{align*}
+\frac{|G|^2}{|U||V|}\Big|\sum_{\gamma \neq \mathbf{1} }\widehat{h}(\gamma)\hat{U}(\gamma)\hat{V}(\gamma)\Bigg|&\leq \frac{|B^+|}{|U|^{1/2}|V|^{1/2}}\sup_{\gamma \neq 0}|\widehat{h\mu_{B^+}}(\gamma)|\leq \frac{2\epsilon^2|B|(1+100|K|\epsilon^2)}{|U|^{1/2}|V|^{1/2}}\\
+&\leq  \frac{3\epsilon^2 |B|}{(\epsilon|B|)^{1/2}(\epsilon|B'|)|^{1/2}}= \frac{3\epsilon|B|^{1/2}}{|B'|^{1/2}}\leq 3\epsilon 400|K|
+\end{align*}
+where some of the inequalities are by Cauchy-Schwarz and standard identities and the last one comes from the fact that
+$$
+|B|\leq 4^{400|K|}|B'|.
+$$
+\end{proof}
+
+\begin{observation}
+If $G=\mathbb{F}_p^n$ in the above and $\rho<1/p$, then we can take $\epsilon=0$.
+\end{observation}
+
+
+We now prove the main result of this section, our partial converse to Lemma \ref{excellentimpliesstronglyregular} for elements.
+
+\begin{proposition}\label{goodlem}
+Suppose $k\geq 2$, $\epsilon<(1/2)^{4k+4}$, $G$ is a finite abelian group, and $A\subseteq G$ is $k$-stable. If $G$ is sufficiently large then the following holds.  Suppose $B'\prec_{\epsilon} B$ are Bohr set in $G$ satisfying $|B|\geq |B'|\geq m$, where $m=m(k,\epsilon)$ is from Lemma \ref{lemma1}. If $y\in G$ is $\epsilon$-regular for $f=((-A)^{+y}_B-\alpha)\mu_B$, then $y$ is $\epsilon^{1/(4k+2)}$-good for $B$.
+\end{proposition}
+
+\begin{proof}
+Let $g=1_H$ in case 1 and $g=f$ in case 2.  Let $Z=Z'=H$ in case 1 and $Z=B$, $Z'=B'$ in case 2.  Suppose towards a contradiction that there is $y\in G$ which is $\epsilon$-regular for $Z$, but 
+\begin{align}\label{p}
+\epsilon^{1/(4k+2)}|Z|<|(A-y)\cap Z|<(1-\epsilon^{1/(4k+2)})|Z|.
+\end{align}
+In case 1, by Lemma \ref{reg} and (\ref{p}), $(Z',Z+y)$ is $\sqrt{\epsilon}$-regular in $\Gamma_A$ and $\epsilon^{1/(4k+k)}-error<d(Z,Z'+y)<(1-\epsilon^{1/(4k+2)})+error$.  By assumption, $|Z|\geq |Z'|=|Z'+y|\geq  m(k,\epsilon)$.  Also by assumption, $\sqrt{\epsilon}<(1/2)^{2k+2}$.  Since $A$ is $k$-stable and $\sqrt{\epsilon}^{1/(2k+2)}=\epsilon^{1/(4k+k)}$, Lemma \ref{lemma1} implies $d(Z,Z'+g)\leq \epsilon^{1/(4k+k)}$ or $d(H,H+g)\geq 1-\epsilon^{1/(4k+k)}$, a contradiction. Consequently, either $\epsilon^{1/(4k+2)}|Z|\geq |(A-y)\cap Z|$, in which case ... or $|(A-y)\cap Z|<(1-\epsilon^{1/(4k+2)})|Z|$, in which case...
+\end{proof}
+
+\begin{observation}
+In cases where $G$ is $\mathbb{F}_p^n$, we can take $\epsilon=0$ so that $B=B'$ is a subgroup.
+\end{observation}
+
+
+\section{Key Lemma: dense stable sets contain most of a translate of Bohr set}
+
+In this section we prove a key lemma, Proposition \ref{keylem}, which shows that a dense set which is $k$-stable has to contain most of a coset of a subgroup with index bounded by $C(1/\epsilon)$ for some constant $C$ depending on $k$. We begin with some observations.  Let $||x||$ denote the distance from $x$ to the nearest integer.
+
+
+\begin{observation}\label{lemma11}
+Suppose $B=B(K,\rho)\subseteq G$ is a regular Bohr set, $A\subseteq G$, $\alpha=|(A-y)\cap B|/|B|$, and $f=((-A)_B^{+y}-\alpha)\mu_B$.  Let $\beta=|B|/|G|$.  If $y\in G$ is not $\epsilon$-regular for $f$, then there is $\rho \in [\epsilon \rho /400|K|, \epsilon \rho/200|K|$ and $t\in G\setminus K$ such that for some $x\in G$, if $B''=B(K\cup \{t\},\rho')$, then $B''$ is regular and
+\begin{align}\label{align}
+\frac{|(A-y)\cap (B''+x)|}{|B''|}\geq \alpha+\frac{\epsilon}{2}
+\end{align}
+\end{observation}
+\begin{proof}
+Since $y$ is not $\epsilon$-regular for $f$, there is $t\in G$ such that $|\widehat{f}(t)|\geq \epsilon$.  Let $K'=K\cup \{t\}$.  Let $g(x)=(-A)^{+y}(x)\mu_B(x)$ so $f(x)=g(x)-\alpha \mu_B(x)$.  Observe the following.
+\begin{align*}
+\hat{f}(t)=\mathbb{E}_{x\in G}f(x) \omega^{xt}=\mathbb{E}_{x\in G}(g(x)-\alpha \mu_B(x))\omega^{xt}=\mathbb{E}_{x\in B}((-A)^{+y}(x)-\alpha)\omega^{xt}=\mathbb{E}_{x\in B}(\beta g(x)-\alpha)\omega^{xt}.
+\end{align*}
+Now let $B'\prec_{\epsilon/16} B$, for some $B'=B(K,\rho')$ where $\rho' \in  [\epsilon \rho /(16)400|K|, \epsilon \rho/(16)200|K|]$ (which exists by the remark following Lemma \ref{lemma2.1}).  Find $\rho''\in [\rho'/2,\rho']$ so that $B''=B(K\cup \{t\},\rho'')$ is regular (note $\rho''\in [\epsilon \rho /16(400)|K|, \epsilon \rho/1600|K|]$).  Note $B''\subseteq B'$.  By Lemma \ref{?} part (\ref{lemmapart1}), since $B''\subseteq B'$, we have the following.
+\begin{align*}
+\hat{f}(t)=\mathbb{E}_{x\in B}(\beta g(x)-\alpha)\omega^{xt}\approx_{\epsilon/16}&\mathbb{E}_{x\in B}\mathbb{E}_{z\in B''} (\beta g(x+z)-\alpha)\omega^{(x+z)t}\\
+=&\mathbb{E}_{x\in B}\omega^{xt}\mathbb{E}_{z\in B''}(\beta g(x+z)-\alpha)\omega^{zt}.
+\end{align*}
+Note that for all $z\in B''$, by definition, $-\rho'' \leq ||zt/N|| \leq \rho''$.  Consequently, $|\omega^{zt}-1|=|\sin (||zt/N||)|$.  Since $||zt/N||<\pi/2$, $|\sin (||zt/N||)|\leq | ||zt/N|| |\leq \rho''$.  Thus for each $z\in B''$, $\omega^{zt}\approx_{\rho''}1$.  Consequently, since $\rho''<\epsilon/16$,
+\begin{align*}
+\mathbb{E}_{x\in B}\omega^{xt}\mathbb{E}_{z\in B''}(\beta g(x+z)-\alpha)\omega^{zt}\approx_{\epsilon/16}\mathbb{E}_{x\in B}\omega^{xt}\mathbb{E}_{z\in B''}(\beta g(x+z)-\alpha)=\mathbb{E}_{x\in B}\omega^{xt}(\beta g\ast \mu_{B''}(x)-\alpha)
+\end{align*}
+Note the last equality uses the fact that $B''$ is symmetric.  Combining what we have shown yields that 
+\begin{align*}
+\epsilon \leq |\widehat{f}(t)|\leq |\mathbb{E}_{x\in B}\omega^{xt}(\beta g\ast \mu_{B''}(x)-\alpha)|+\epsilon/16+\epsilon/16,
+\end{align*}
+thus 
+$$
+3\epsilon/4\leq |\mathbb{E}_{x\in B}\omega^{xt}(\beta g\ast \mu_{B''}(x)-\alpha)|\leq \mathbb{E}_{x\in B}|\beta g\ast \mu_{B''}(x)-\alpha|
+$$
+We now show that $\mathbb{E}_{x\in B}(\beta g\ast \mu_{B''}(x)-\alpha)\approx_{\epsilon/8}0$.  Observe that 
+\begin{align*}
+\mathbb{E}_{x\in B}\beta g\ast \mu_{B''}(x)&=\mathbb{E}_{x\in B}\Big(\mathbb{E}_{y\in G}\beta g(y)\mu_{B''}(x-y)
+\Big)\\
+&=\mathbb{E}_{y\in G}\beta g(y)\mathbb{E}_{x\in B}\mu_{B''}(x-y)\\
+&=\mathbb{E}_{y\in B}\beta^2 g(y)\mathbb{E}_{x\in B}\mu_{B''}(x-y)\\
+&\approx_{\epsilon/16}\mathbb{E}_{y\in B^{-}}\beta^2 g(y)\mathbb{E}_{x\in B}\mu_{B''}(x-y),
+\end{align*}
+where the last line follows from Lemma \ref{lem2.3} part (ii).  Now observe 
+\begin{align*}
+\mathbb{E}_{x\in B}\mu_{B''}(x-y)=\frac{1}{|B|}\sum_{x\in B}\frac{|G|}{|B''|}B''(x-y)&=\frac{|G|}{|B''||B|}\sum_{x\in B}B''^{+y}(x)=\frac{|G|}{|B''||B|}|B\cap (B'+y)|\\
+&=\frac{|B\cap (B''+y)|}{|B|}\frac{|G|}{|B''|}=\frac{|B''|}{|B|}\frac{|G|}{|B''|}=\frac{|G|}{|B|}=\beta^{-1},
+\end{align*}
+where the third to last inequality is because $B''+y\subseteq B$ and $|B''+y|=|B'|$.  Consequently we have that 
+\begin{align*}
+\mathbb{E}_{y\in B^{-}}\beta^2 g(y)\mathbb{E}_{x\in B}\mu_{B''}(x-y)=\mathbb{E}_{y\in B^{-}}\beta^2 g(y)\beta^{-1}=\mathbb{E}_{y\in B^{-}}\beta g(y)\approx_{\epsilon/16} \mathbb{E}_{y\in B}\beta g(y)=\mathbb{E}_{y\in G}g(x)=\alpha,
+\end{align*}
+where the approximation is from Lemma \ref{lem2.3} part (ii).  Combining all this we have that 
+\begin{align*}
+\mathbb{E}_{x\in B}(\beta g\ast \mu_{B''}(x)-\alpha)=\mathbb{E}_{x\in B}(\beta g\ast \mu_{B''}(x))-\mathbb{E}_{x\in B}\alpha =\mathbb{E}_{x\in B}(\beta g\ast \mu_{B''}(x))-\alpha\approx_{\epsilon/8}\alpha - \alpha =0.
+\end{align*}
+Therefore we have that 
+\begin{align*}
+5\epsilon/8=3\epsilon/4-\epsilon/8&\leq \mathbb{E}_{x\in B}|\beta g\ast \mu_{B''}(x)-\alpha| + \mathbb{E}_{x\in B}(\beta g\ast \mu_{B'}(x)-\alpha)\\
+&=\mathbb{E}_{x\in B}|\beta g\ast \mu_{B''}(x)-\alpha| + (\beta g\ast \mu_{B''}(x)-\alpha).
+\end{align*}
+Consequently, there must be $x\in B$ such that $|\beta g\ast \mu_{B''}(x)-\alpha| + (\beta g\ast \mu_{B''}(x)-\alpha)\geq 5\epsilon/8$. Observe that we must have $|\beta g\ast \mu_{B''}(x)-\alpha| = \beta g\ast \mu_{B''}(x)-\alpha$, since otherwise $|\beta g\ast \mu_{B''}(x)-\alpha| + (\beta g\ast \mu_{B''}(x)-\alpha)$ would be equal to $0$, a contradiction.  Thus we have that 
+$$
+5\epsilon/8\leq |\beta g\ast \mu_{B''}(x)-\alpha| + (\beta g\ast \mu_{B''}(x)-\alpha)=2(\beta g\ast \mu_{B''}(x)-\alpha).
+$$
+Thus
+\begin{align*}
+\alpha+5\epsilon/16 \leq \beta g\ast \mu_{B''}(x)&=\frac{1}{|G|}\frac{|G|}{|B''|}\sum_{z\in G}\beta g(z)B''(x-z)\\
+&=\frac{|B|}{|G|} \frac{|(-A)^{+y}\cap B\cap (B''+x)|}{|B''|}\\
+&\leq  \frac{|(-A)^{+y}\cap B\cap (B''+x)|}{|B''|}
+\end{align*}
+Now we need to argue that because $x\in B$, $B''+x$ is basically contained in $B$, so that this is essentially telling us 
+$$
+\alpha+4\epsilon/8\leq \frac{|(-A)^{+y}\cap (B''+x)|}{|B''|}=\frac{|(-A)^{+y-x}\cap  B''|}{|B''|}=\frac{|A^{-y+x}\cap  B''|}{|B''|},
+$$
+where the last equality is because $B''$ is a Bohr set and is thus symmetric.
+\end{proof}
+
+
+
+\begin{lemma}\label{incrementlem}
+Suppose $\epsilon>0$, $G$ is a sufficiently large finite abelian group and $A\subseteq G$ and $B=B(K,\rho)$ is a regular Bohr set.  Suppose $\alpha:= \frac{|A\cap B|}{|B|}\geq \epsilon$.  Then there is $K_1\supseteq K$ and $y\in G$ such that $|K_1\setminus K|\leq ??$ and $\rho_1\in [?,?]$ so that if such that if $B_1=B(K_1,\rho_1)$, then $B_1$ is regular, $y$ is $\epsilon$-regular for $B_1$, and $|B_1\cap (A+g)|\geq \alpha |B_1|$.
+\end{lemma}
+\begin{proof}
+Suppose first we are in situation 1. Fix any $g_0\in G$.  If $g_0$ is $\epsilon$-regular for $H_0=H$, then we are done, since 
+$$
+|(A+g_0)\cap H_0|=|(A+g_0)\cap H|=\alpha |H|\geq \epsilon |H|=\epsilon |H_0|.
+$$
+Suppose now that $g_0$ is not $\epsilon$-regular for $H_0$.  Assume $0\leq i$ and suppose by induction we have constructed a sequence of subgroups $H_0\leq \ldots \leq H_i$ and chosen $g_0,\ldots, g_i\in G$ such that the following hold.
+\begin{enumerate}
+\item For each $0\leq j<i$, $H_j$ has index $p$ in $H_{j+1}$, and consequently, $H_i$ has index $p^i$ in $G$.
+\item For each $0\leq j\leq i$, $|(A+g_j)\cap H_j|\geq (\alpha+\frac{j\epsilon}{2})|H_j|$.
+\end{enumerate}
+If $g_i$ is $\epsilon$-regular for $H_i$, then we are done by our induction hypotheses on $H_i$ and $g_i$.  So assume $g_i$ is not $\epsilon$-regular for $H_i$.  Then by Lemma \ref{lemma11}, there is $H_{i+1}\leq H_i$ of index $p$, and a coset $x_{i+1}+H_{i+1}$ such that
+$$
+|(A+g_i)\cap (H_{i+1}+x_{i+1})|\geq \Big(\frac{|(A+g_i)\cap H_i|}{|H_i|}+\frac{\epsilon}{2}\Big)|H_{i+1}| \geq (\alpha+\frac{i\epsilon}{2}+\frac{\epsilon}{2})|H_{i+1}|=\Big(\alpha+\frac{(i+1)\epsilon}{2}\Big)|H_{i+1}|,
+$$
+where the second inequality is by our induction hypothesis (2) on $H_i$ and $g_i$.  Let $g_{i+1}=g_i+x_{i+1}$, then we have shown that $|(A+g_{i+1})\cap H_{i+1}|=|(A+g_i)\cap (H_{i+1}+x_{i+1})|\geq (\alpha+ \frac{(i+1)\epsilon}{2})|H_{i+1}|$, and since $H_{i+1}$ has index $p$ in $H_i$, our induction hypothesis (1) for $H_i$ implies $H_{i+1}$ has index $p^{i+1}$ in $G$. This finishes our inductive construction.  Suppose towards a contradiction this went on for $t$ steps, where $t=\lceil \frac{2}{\epsilon}\rceil$.  Then we obtain $H_t$ and $g_t$ such that $|(A+g_t)\cap H_t|\geq \frac{t\epsilon}{2} |H_t|>|H_t|$, a contradiction.  Therefore this process ends at some stage $\ell<\lceil \frac{2}{\epsilon}\rceil$, i.e. $\ell\leq \lfloor \frac{2}{\epsilon}\rfloor\leq \frac{2}{\epsilon}$.  Thus we will obtain $H_{\ell}\leq G$ and $g_{\ell}\in G$ such that $H_{\ell}$ has index at most $p^{\ell}\leq p^{\lfloor 2/\epsilon\rfloor}$, such that $g_{\ell}$ is $\epsilon$-regular for $H_{\ell}$, and $|(A+g_{\ell})\cap H_{\ell}|\geq (\alpha+\frac{\ell \epsilon}{2}) |H_{\ell}|\geq \alpha|H_{\ell}|$.
+\end{proof}
+
+
+\begin{proposition}\label{keylem}
+Suppose $0<\epsilon<(1/2)^{4k+4}$, $k\geq 2$, $G$ is a finite abelian group, $A\subseteq G$ is $k$-stable, and $|A|>\epsilon^{1/(4k+4)}|G|$.  Suppose $B=B(K,\rho)$ is a Bohr set and $\alpha=\frac{|A\cap B|}{|B|}$.  Then there is $K_1\supseteq K$ with $|K_1\setminus K|\leq ??$ and $x\in G$ so that if $B_1=B(K_1,\rho)$ then $|A\cap (B_1+x)|\geq (1-\epsilon^{1/(4k+4)})|B_1|$.
+\end{proposition}
+
+\begin{proof}
+Let $\alpha= |A|/|G|$.  By our assumption, $\alpha>\epsilon^{1/(4k+4)}$.  Suppose first we are in situation 1. By Lemma \ref{incrementlem}, there exists a subgroup $H_1\leq H$ of index at most $p^{\lfloor 2/\epsilon\rfloor }$ and $x\in G$ such that $x$ is $\epsilon$-regular for $H$ and 
+$$
+|A\cap (H_1+x)|=|(A-x)\cap H_1|\geq \alpha|H_1|>\epsilon^{1/(4k+4)}|H_1|.
+$$
+By Proposition \ref{goodlem}, because $A$ is $k$-stable, $x$ is $\epsilon$-regular, and $\epsilon<(1/2)^{4k+4}$, either 
+$$
+|(A-x)\cap H_1|\leq \epsilon^{1/(4k+4)}|H_1|\text{ or }|H_1\setminus (A-x)|\leq \epsilon^{1/(4k+2)}|H_1|.
+$$
+Since $|(A-x)\cap H_1| >\epsilon^{1/(4k+4)}|H_1|$, we must have $|H_1\setminus (A-x)|\leq \epsilon^{1/(4k+4)}|H_1|$, and consequently, $|(A-x)\cap H_1|\geq (1-\epsilon^{1/(4k+4)})|H_1|$.  Since $|(A-x)\cap H_1|=|A\cap (H_1+x)|$, we are done.
+
+
+Suppose now we are in situation 2. By Lemma \ref{incrementlem}, there is $K_1\supseteq K$ with $|K_1\setminus K|\leq ??$ and $x\in G$ so that if $B_1=B(K_1,\rho)$ then $x$ is $\epsilon$-regular for $B_1$ and 
+$$
+|A\cap (B_1+x)|=|(A-x)\cap B_1|\geq \alpha|B_1|>\epsilon^{1/(4k+4)}|B_1|.
+$$
+By Proposition \ref{goodlem}, because $A$ is $k$-stable, $x$ is $\epsilon$-regular, and $\epsilon<(1/2)^{4k+4}$, either 
+$$
+|(A-x)\cap B_1|\leq \epsilon^{1/(4k+4)}|B_1|\text{ or }|H\setminus (A-x)|\leq \epsilon^{1/(4k+2)}|B_1|.
+$$
+Since $|(A-x)\cap B_1| >\epsilon^{1/(4k+4)}|B_1|$, we must have $|B_1\setminus (A-x)|\leq \epsilon^{1/(4k+4)}|B_1|$, and consequently, $|(A-x)\cap B_1|\geq (1-\epsilon^{1/(4k+4)})|B_1|$.  Since $|(A-x)\cap B_1|=|A\cap (B_1+x)|$, we are done.
+\end{proof}
+
+
+
+\section{Proof of Main Theorem}
+Suppose $G$ is an abelian group. For convenience, if $A\subseteq G$, $\Gamma_A=(G,E)$, and $x\in G$, then 
+\begin{align*}
+N^1(x)&=N(x)=\{z\in G: xz\in E\}\\
+N^0(x)&=\neg N(x)=\{z\in G: xz\notin E\}\\
+A^1&=A\\
+A^0&=\neg A=G\setminus A.
+\end{align*}
+
+We will use the following observations throughout this section.
+\begin{observation}
+Suppose $A\subseteq G$ and $g, h\in G$.  Then in $\Gamma_A$, $N(g)=A-g$, $\neg N(g)=\neg A-g$, $h+N(g)=N(g-h)$, and $h+\neg N(g)=\neg N(g-h)$.
+\end{observation}
+
+We now state a few facts we will need.
+
+\begin{fact}\label{stillstable}
+Suppose $A\subseteq G$ is $k$-stable and $g,h\in G$.  
+\begin{enumerate}
+\item $A+g$ and $\neg A+g$ are $k$-stable in $G$.
+\item If $H\leq G$, then $A\cap H$ is $k$-stable in $H$.
+\end{enumerate}
+\end{fact}
+\begin{proof}
+Suppose $A+g$ is not $k$-stable.  Then there are $a_1,\ldots, a_k,b_1,\ldots, b_k$ such that $a_i+b_j\in A+g$ if and only if $i\leq j$.  This implies $a_i-g+b_j\in A$ if and only if $i\leq j$.  Let $a'_1=a_1-g,\ldots, a'_k=a_k-g$ and $b'_1=b_1,\ldots, b_k'=b_k$.  Then we have shown $a'_i+b_j'\in A$ if and only if $i\leq j$, contradicting that $A$ is $k$-stable.  Thus $A+g$ is $k$-stable.  Clearly $\neg A$ is $k$-stable because $A$ is.  Thus the same argument as above implies $\neg A+g$ is $k$-stable.
+
+Suppose $H\leq G$ but $A\cap H$ is not $k$-stable in $H$.  Then there are $a_1,\ldots, a_k,b_1,\ldots, b_k$ in $H$ such that $a_i+b_j\in A\cap H$ if and only if $i\leq j$.  Note $i\leq j$ implies $a_i+b_j\in A\cap H\subseteq A$.  So in order for this to not contradict the fact that $A$ is $k$-stable in $G$, we must have that for some $i>j$, $a_i+b_j\in A$.  However, $a_i,b_j\in H$ implies $a_i+b_j\in H$, thus $a_i+b_j\in A\cap H$, contradicting our assumption that $a_i+b_j\in A\cap H$ if and only if $i\leq j$. Thus $A\cap H$ is $k$-stable in $H$.
+\end{proof}
+
+\begin{fact}\label{stillstable1}
+Let $f(x)=2x2^x$.  If $A,B$ are $k$-stable subsets of $G$, then $A\cap B$ is $f(k)$-stable.
+\end{fact}
+\begin{proof}
+This is the standard Ramsey argument.
+\end{proof}
+
+Given $i\geq 1$, $f^i(x)$ denotes the function we obtain by composing $f$ with itself $i$ times. By convention, let $f^0(x)=x$ for all $x$.
+
+Notational conventions: Given an integer $n\geq 2$, define $2^n=\{0,1\}^n$ and
+\begin{align*}
+2^{<n}=\bigcup_{i=0}^{n-1} \{0,1\}^i,
+\end{align*}
+where $\{0,1\}^0=\langle$ $\rangle$ is the \emph{empty string}, and for $i>0$, $\{0,1\}^i$ is the usual cartesian product.  Given $\eta, \eta'\in 2^{<n}$, define $\eta \trianglelefteq \eta'$ if and only if $\eta=\langle$ $\rangle$ or $\eta$ is an initial segment of $\eta'$.  We will write $\eta \triangleleft \eta'$ to denote that $\eta \trianglelefteq \eta'$ and $\eta \neq \eta'$.  Given $\eta \in \{0,1\}^i$, let $|\eta|=i$ denote \emph{length} of $\eta$ (the length of the empty string $\langle$ $\rangle$ is $0$). Given $\eta \in 2^n$, and $i\in \{0,1\}$, $\eta\wedge i$ denotes the element of $2^{n+1}$ obtained by adding $i$ to the end of $\eta$.  If $\eta=(\eta_1,\ldots, \eta_n) \in 2^n$ and $1\leq i\leq n$, $\eta |_i=(\eta_1,\ldots, \eta_i)$, and $\eta(i)=\eta_i$.  By convention, $\eta|_0=\langle \rangle$.  
+
+
+\begin{definition}
+Given a graph $G=(V,E)$, the \emph{tree bound} for $G$ is the smallest integer $d=d(G)$ such that there does not exist sequences $\langle a_{\eta}: \eta \in 2^d\rangle$, $\langle b_{\rho}: \rho \in 2^{<d}\rangle$, of elements of $V$ with the property that for each $\eta\in 2^d$ and $\rho\in 2^{<d}$, if $\rho \triangleleft \eta$, then $a_{\eta}b_{\rho}\in E$ if and only if $\rho\wedge 1\trianglelefteq \eta$.
+\end{definition}
+
+\begin{fact}\cite{hodges}\label{treefact}
+For each integer $k$, there is $d=d(k)<2^{k+2}-2$ such that if $G$ is a $k$-stable graph, then the tree bound of $G$, $d(G)$, is at most $d$.
+\end{fact}
+
+\begin{fact}\label{fact00}
+Suppose $k\geq 2$ is an integer.  If $0<\epsilon<(1/2)^{20(k+1)}$, then $\epsilon^{1/(5k+5)}-\epsilon^{1/(4k+4)}> \epsilon^{1/(4k+4)}$.
+\end{fact}
+\begin{proof}
+Let $\eta=\epsilon^{1/(k+1)}$.  We want to show $\eta^{1/5}-\eta^{1/5}>\eta^{1/5}$.  This holds if and only if $\eta^{1/5}>2\eta^{1/4}$, which holds if and only if $\eta^4>2^{20}\eta^5$, which holds because our choice of $\epsilon$ and the definitoin of $\eta$ implies $(1/2)^{20}>\eta$.
+\end{proof}
+
+\begin{theorem}\label{mainth}
+For all $\mu\in (0,1)$,  $k\geq 2$, the following holds. 
+\begin{enumerate}
+\item For a fixed prime $p$ and sufficiently large $n$ the following holds.  Assume $A\subseteq \mathbb{F}^n_p=G$ is $k$-stable.  Let $K=f^d(k)$, where $f$ is from Fact \ref{stillstable1} and $d=d(k)$ is as in Fact \ref{treefact}. Then there is $H\leq \mathbb{F}_p^n$ of index at most $p^{d\lfloor 2/\mu \rfloor}$ which is $\mu^{1/(5K+5)}$-excellent for $A$.
+\item For sufficiently large prime integers $N$, the following holds.  Assume $A\subseteq \mathbb{Z}/p\mathbb{Z}=G$ is $k$-stable.  Let $K=f^d(k)$, where $f$ is from Fact \ref{stillstable1} and $d=d(k)$ is as in Fact \ref{treefact}. Then there is regular Bohr set $B=B(K,\rho)$ such that $\rho \in [?,?]$, $|K|\leq ?^{d\lfloor 2/\mu \rfloor}$ which is $\mu^{1/(5K+5)}$-excellent for $A$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Set $\epsilon=\min\{\mu, (1/2)^{4k+4}, (1/2)^{20(K+1)}\}$, so that $\epsilon\leq \mu$ and $\epsilon$ and $k$ satisfy requirements appearing in Fact \ref{fact00} and Proposition \ref{keylem}.  By definition of $\epsilon$ and since $\epsilon \leq \mu$, it suffices to find an $\epsilon^{1/(5K+5)}$-excellent $H$ whose index is at most $2^{d\lfloor 1/\epsilon\rfloor}$. We will use throughout that if $0\leq t\leq d$, then $f^t(k)\leq K$.  If case 1 holds, let $m=p^{\lfloor 2/\epsilon \rfloor}$.  
+
+Let $Z_{<>}=G$.  If $Z_{<>}$ is $\epsilon^{1/(5K+5)}$-excellent, then we are done.  So assume $Z_{\langle \rangle}$ is not $\epsilon^{1/(5K+5)}$-excellent.  This means there exists $g_{<>}\in Z_{<>}$ such that
+\begin{align*}
+&|N(g_{<>})\cap Z_{<>}|=|(A-g_{<>})\cap Z_{<>}|> \epsilon^{1/(5K+5)} |Z_{<>}|\text{ and }\\
+&|\neg N(g_{<>})\cap Z_{<>}|=|((\neg A)-g_{<>})\cap Z_{<>}|> \epsilon^{1/(5K+5)} |Z_{<>}|.
+\end{align*}
+Note $A-g_{<>}$ and $\neg A-g_{<>}$ are $k=f^0(k)$-stable by Fact \ref{stillstable}(2).  Since $\epsilon^{1/(5K+5)}>\epsilon^{1/(4k+4)}$ and $\epsilon<(1/2)^{4k+4}$, Proposition \ref{keylem} implies in case 1 that there exist subgroups $H_{1}\leq Z_{<>}$, $H_{0}\leq Z_{<>}$ and $x_{0}, x_{1}\in Z_{<>}$, such that $H_{1},H_{0}$ have index at most $m$ in $H_{<>}$ and such that 
+\begin{align*}
+|(A-g_{<>})\cap (H_{1}+x_{1})|&\geq (1-\epsilon^{1/(4k+4)})|H_{1}|\text{ and }\\
+|((\neg A)-g_{<>})\cap (H_{0}+x_{0})|&\geq (1-\epsilon^{1/(4k+4)})|H_{0}|.
+\end{align*}
+In case 2, Proposition \ref{keylem} implies that there exist Bohr sets $B_{1}=B(K_1,\rho_1)$, $B_{0}=B(K_0, \rho_0)$ such that $\max\{|K_1,K_0|\}\leq ?$ and $x_{0}, x_{1}\in Z_{<>}$, such that 
+\begin{align*}
+|(A-g_{<>})\cap (B_{1}+x_{1})|&\geq (1-\epsilon^{1/(4k+4)})|B_{1}|\text{ and }\\
+|((\neg A)-g_{<>})\cap (B_{0}+x_{0})|&\geq (1-\epsilon^{1/(4k+4)})|B_{0}|.
+\end{align*}
+In case 1, let $Z_1=H_1,Z_0=H_0$ and in case 2 let $Z_1=B_1,Z_2=B_2$.  Then in both cases, we have 
+\begin{align*}
+|(A-g_{<>}-x_{1})\cap Z_{1}|&\geq (1-\epsilon^{1/(4k+4)})|Z_{1}|\text{ and }\\
+|((\neg A)-g_{<>}-x_{0})\cap Z_{0}|&\geq (1-\epsilon^{1/(4k+4)})|Z_{0}|.
+\end{align*}
+Set $X_{<>}=G$, $X_1=A-g_{<>}-x_1=N(g_{<>}+x_1)$ and $X_0=A-g_{<>}-x_0=N(g_{<>}+x_0)$.  By Fact \ref{stillstable}(1), $X_0$ and $X_1$ are $k$-stable in $H_0$ and $H_1$, respectively. Note that for each $i\in \{0,1\}$, 
+$$
+|X_i\cap Z_i|\geq (1-\epsilon^{1/(4k+4)})|H_i|
+$$
+
+
+
+Assume now $1\leq t<d$, and suppose by induction we have constructed sequences $\langle Z_{\eta}: \eta\in 2^{\leq t}\rangle$, $\langle g_{\eta}: \eta\in 2^{\leq t}\rangle$, $\langle x_{\eta}: \eta\in 2^{\leq t}\setminus \{<>\}\rangle$, and $\langle X_{\eta}: \eta\in 2^{\leq t}\rangle$ such that the following hold.
+\begin{enumerate}
+\item In case 1, the $Z_{\eta}$ are all subgroups of $G$, and further if $\eta\in 2^{< t}$ then $Z_{\eta\wedge i}\leq Z_{\eta}$ and $Z_{\eta\wedge i}$ has index at most $m$ in $Z_{\eta}$, and index at most $m^{|\eta|}$ in $G$.  In case 2, each $Z_{\eta}=B(K_{\eta},\rho_{\eta})$ for some $K_{\eta}\subseteq \widehat{G}$ and $\rho_{\eta}\in (0,1)$, and further, if $\eta\in 2^{< t}$ then $K_{\eta\wedge i}\supseteq K_{\eta}$, $\rho_{\eta\wedge i}\leq \rho_{\eta}$, and $|K_{\eta\wedge i}\setminus K_{\eta}|\leq ?$ and $\rho_{\eta\wedge i}\geq ?\rho_{\eta}$.
+\item For all $\eta\in 2^{\leq t}$, $|X_{\eta}\cap Z_{\eta}|\geq (1-\epsilon^{1/(4f^{t-1}(k)+4)})|Z_{\eta}|$.
+\item For all $\eta\in 2^{<t}$, $X_{\eta\wedge i}=(X_{\eta}-x_{\eta \wedge i})\cap N^i(g_{\eta}+x_{\eta \wedge i})$.
+\item For all $\eta\in 2^{\leq t}$, $X_{\eta}$ is $f^{t-1}(k)$-stable in $G$.
+\item For each $s<t$, $\sigma \in 2^{s}$, and $\eta\in 2^{t}$ such that $\sigma \triangleleft \eta$, if $x\in X_{\eta}$ then 
+\begin{align}\label{5}
+x+g_{\sigma}+ x_{\eta|_{s+1}}+\ldots+x_{\eta|_{t-1}}+x_{\eta} \in A \Leftrightarrow \eta(s+1)=1.
+\end{align}
+\end{enumerate}
+
+
+If for some $\eta\in 2^t$, $Z_{\eta}$ is $\epsilon^{1/(5K+5)}$-excellent, then we are done since $Z_{\eta}$ satisfies the requirements by our induction hypotheses.  More specifically, in case 1, $Z_{\eta}$ is a subgroup of index at most $m^t<m^d$ in $G$, and in case 2, $Z_{\eta}$ is a Bohr set $B(K_{\eta},\rho_{\eta})$ with ???.  
+
+So assume that for all $\eta \in 2^t$, $Z_{\eta}$ is not $\epsilon^{1/(4K+4)}$-excellent.   Fix $\eta \in 2^t$.  Since $Z_{\eta}$ is not $\epsilon^{1/(5K+5)}$-excellent, there is $g_{\eta}\in G$ such that 
+\begin{align*}
+&|N(g_{\eta})\cap Z_{\eta}|\geq \epsilon^{1/(5K+5)}|Z_{\eta}| \text{ and }\\
+&|\neg N(g_{\eta})\cap Z_{\eta}|\geq \epsilon^{1/(5K+5)}|Z_{\eta}|
+\end{align*}
+Combining this with our induction hypothesis 2 and the fact that $f^{t-1}(k)\leq K$ implies 
+\begin{align*}
+&|N(g_{\eta})\cap X_{\eta}\cap Z_{\eta}|\geq(\epsilon^{1/(5K+5)}-\epsilon^{1/(4f^{t-1}(k)+4)})|Z_{\eta}| \geq (\epsilon^{1/(5K+5)}-\epsilon^{1/(4K+4)})|Z_{\eta}|\text{ and }\\
+&|\neg N(g_{\eta})\cap X_{\eta}\cap Z_{\eta}|\geq(\epsilon^{1/(4K+4)}-\epsilon^{1/(2f^{t-1}(k)+2)})|Z_{\eta}|\geq (\epsilon^{1/(5K+5)}-\epsilon^{1/(4K+4)})|Z_{\eta}|.
+\end{align*}
+By Fact \ref{fact00} and because $\epsilon<(1/2)^{20(K+1)}$, this yields the following inequalities.  
+\begin{align}
+&|N(g_{\eta})\cap X_{\eta}\cap Z_{\eta}|\geq (\epsilon^{1/(5K+5)}-\epsilon^{1/(4K+4)})|Z_{\eta}|>\epsilon^{1/(4K+4)}|Z_{\eta}|\geq \epsilon^{1/(4f^t(k)+4)}|Z_{\eta}|\text{ and }\label{large1}\\
+&|\neg N(g_{\eta})\cap X_{\eta}\cap Z_{\eta}|\geq(\epsilon^{1/(5K+5)}-\epsilon^{1/(4K+4)})|Z_{\eta}|>\epsilon^{1/(4K+4)}|Z_{\eta}|\geq \epsilon^{1/(4f^t(k)+4)}|Z_{\eta}|,\label{large2}
+\end{align}
+where the last inequalities in each line are because $f^t(k)\leq K$. Note that for each $i\in \{0,1\}$, $A^i+g_{\eta}$ is $k$-stable by Fact \ref{stillstable}, and thus also $f^{t-1}(k)$-stable.  By our induction hypothesis 4, $X_{\eta}$ is $f^{t-1}(k)$-stable.  Consequently for each $i\in \{0,1\}$, $N^i(g_{\eta})\cap X_{\eta}=(A^i-g_{\eta})\cap X_{\eta}$ is $f(f^{t-1}(k))=f^t(k)$-stable, by definition of $f$.
+
+Combining this with (\ref{large1}), (\ref{large2}), and the fact that $\epsilon<(1/2)^{4K+4}\leq (1/2)^{4f^t(k)+4}$, we see the hypotheses of Proposition \ref{keylem} are satisfied for $N^i(g_{\eta})\cap X_{\eta}$, and $Z_{\eta}$ for each $i\in \{0,1\}$.  Therefore, in case 1, for each $i\in \{0,1\}$, there is a subgroup $Z_{\eta \wedge i}\leq Z_{\eta}$ and $x_{\eta \wedge i}\in Z_{\eta}$ such that $Z_{\eta\wedge i}$ has index at most $m$ in $Z_{\eta}$ and such that 
+$$
+|(N^i(g_{\eta})\cap X_{\eta}) \cap (Z_{\eta \wedge i}+x_{\eta \wedge i})|\geq (1-\epsilon^{1/(4f^t(k)+4)})|Z_{\eta \wedge i}|.
+$$
+In case 1, for each $i\in \{0,1\}$, there is a Bohr set $Z_{\eta \wedge i}=B(K_{\eta \wedge i},\rho_{\eta \wedge i})$ and $x_{\eta \wedge i}\in Z_{\eta}$ such that $K_{\eta\wedge i}\supseteq K_{\eta}$, $\rho_{\eta\wedge i}\leq \rho_{\eta}$, and $|K_{\eta\wedge i}\setminus K_{\eta}|\leq ?$ and $\rho_{\eta\wedge i}\geq ?\rho_{\eta}$ and such that 
+$$
+|(N^i(g_{\eta})\cap X_{\eta}) \cap (Z_{\eta \wedge i}+x_{\eta \wedge i})|\geq (1-\epsilon^{1/(4f^t(k)+4)})|Z_{\eta \wedge i}|.
+$$
+In either case, for each $i\in \{0,1\}$, set 
+$$
+X_{\eta \wedge i}=(N^i(g_{\eta})\cap X_{\eta})-x_{\eta\wedge i}=N^i(g_{\eta}+x_{\eta \wedge i})\cap( X_{\eta}-x_{\eta \wedge i} ).
+$$
+ We now show 1-5 holds of $Z_{\eta\wedge i}$, $x_{\eta\wedge i}$, and $X_{\eta\wedge i}$ for $i=1,2$.  It is clear from the above that 1-3 are satisfied.  For (4), we want to show $X_{\eta\wedge i}$ is $f^t(k)$-stable for each $i\in \{0,1\}$.  We know that for each $i\in \{0,1\}$, $N^i(g_{\eta})\cap X_{\eta}$ is $f^t(k)$-stable. By Fact \ref{stillstable}(1), $(N^i(g_{\eta})\cap X_{\eta})-x_{\eta\wedge i}=N^i(g_{\eta}+x_{\eta \wedge i})\cap (X_{\eta}-x_{\eta\wedge i})$ is $f^t(k)$-stable.  
+
+We just need to check number 5.  Fix $\eta=\tau\wedge i\in 2^{t+1}$.  We want to show that for all $s\leq t$ and $\sigma \in 2^s$ such that $\sigma \triangleleft \eta$, the following holds: if $x\in X_{\eta}$, then
+\begin{align}\label{6}
+x+g_{\sigma}+ x_{\eta|_{s+1}}+\ldots+x_{\eta|_{t-1}}+x_{\eta} \in A \Leftrightarrow \eta(s+1)=1.
+\end{align}
+\underline{Case $s=t$}: Suppose first that $s=t$, so $\sigma = \tau$.  Then we want to show that if $x\in X_{\eta}$, then 
+\begin{align}\label{7}
+x+g_{\tau}+x_{\eta} \in A \Leftrightarrow \eta(t+1)=1.
+\end{align}
+Since $\eta(t+1)=i$, this means we want to show $x+g_{\tau}+x_{\eta} \in A \Leftrightarrow i=1$.  Note by definition, $X_{\eta}\subseteq N^i(g_{\tau}+x_{\eta})$.  Thus, if $x\in X_{\eta}$, then $x\in N^i(g_{\tau}+x_{\eta})$ implies $x+g_{\tau}+x_{\eta}\in A^i$.  Thus $x+g_{\tau}+x_{\eta}\in A$ if and only if $i=1$.  This finishes the case $s=t$.
+
+\vspace{5mm}
+\noindent \underline{Case $s<t$}: Suppose now $s<t$.  Fix $x\in X_{\eta}$.  We want to show (\ref{6}) holds.  Recall $\eta=\tau \wedge i$. Note $\sigma\triangleleft \tau$ and 
+\begin{align}
+&x+g_{\sigma}+ x_{\eta|_{s+1}}+\ldots+x_{\eta|_{t-1}}+x_{\eta}\label{8} \\ 
+=&x+g_{\sigma}+x_{\tau|_{s+1}}+\ldots +x_{\tau}+x_{\eta} \label{9}\\ 
+=&(x+x_{\eta})+g_{\sigma}+ x_{\tau|_{s+1}}+\ldots+x_{\tau|_{s-1}}+x_{\tau}\label{10}
+\end{align}
+Since $x\in X_{\eta} = N^i(g_{\tau}+x_{\eta})\cap (X_{\tau}-x_{\eta}) $, we see that $x+x_{\eta}\in X_{\eta}+x_{\eta}= N^i(g_{\tau})\cap X_{\tau}$.  In particular, $x+x_{\eta}\in X_{\tau}$.  By our induction hypothesis, 
+$$
+(x+x_{\eta})+g_{\sigma}+ x_{\tau|_{s+1}}+\ldots+x_{\tau|_{s-1}}+x_{\tau} \in A \Leftrightarrow \tau(s+1)=1.
+$$
+By (\ref{8}), (\ref{9}), (\ref{10}), this shows
+$$
+x+g_{\sigma}+ x_{\eta|_{s+1}}+\ldots+x_{\eta|_{t-1}}+x_{\eta} \in A \Leftrightarrow \tau(s+1)=1 \Leftrightarrow \eta(s+1)=1,
+$$
+where the last equivalence is because $\eta=\tau \wedge i$ and $s<t$.  This finishes our induction.
+
+
+Suppose this process goes on at least $d$ steps.  So we obtain sequences $\langle g_{\eta}: \eta\in 2^{\leq d}\rangle$, $\langle x_{\eta}: \eta\in 2^{\leq d}\setminus \{<>\}\rangle$, and $\langle X_{\eta}: \eta\in 2^{\leq d}\rangle$ such that $X_{\eta}\neq \emptyset$, and for each $s<d$, $\sigma \in 2^{s}$, and $\eta\in 2^{d}$ such that $\sigma \triangleleft \eta$, the following holds.  If $x\in X_{\eta}$ then 
+\begin{align}\label{5}
+x+g_{\sigma}+ x_{\eta|_{s+1}}+\ldots+x_{\eta|_{t-1}}+x_{\eta} \in A \Leftrightarrow \eta(s+1)=1.
+\end{align}
+
+
+For each $\eta \in 2^d$, choose $d_{\eta}\in X_{\eta}$ and set $a_{\eta}=d_{\eta}+\sum_{\sigma\trianglelefteq \eta}x_{\eta}$.  Let $b_{<>}=g_{<>}$ and for each $0<s<d$ and $\sigma \in 2^{s}$, let $b_{\sigma}= g_{\sigma}+x_{\sigma|_{1}}+\ldots +x_{\sigma|_{s-1}}+x_{\sigma}$.  Then if $s<d$, $\sigma\in 2^s$, $\eta\in 2^d$, and $\sigma \trianglelefteq \eta$, then
+\begin{align*}
+a_{\eta}+b_{\sigma}&=d_{\eta}+\sum_{\tau\trianglelefteq \eta}x_{\tau}+g_{\sigma}+x_{\sigma|_{1}}+\ldots +x_{\sigma|_{s-1}}+x_{\sigma}\\
+&=d_{\eta}+\sum_{\tau\trianglelefteq \eta}x_{\tau}+g_{\sigma}+x_{\eta|_{1}}+\ldots +x_{\eta|_{s-1}}+x_{\eta|_s}\\
+&=d_{\eta}+g_{\sigma}+x_{\eta|_{s+1}}+\ldots +x_{\eta|_{d-1}}+x_{\eta}.
+\end{align*}
+Since $d_{\eta}\in X_{\eta}$, (\ref{5}) implies $a_{\eta}+b_{\sigma}\in A$ if and only if $\eta(s+1)=1$.  Thus we have shown that if $\sigma \triangleleft \eta$, then $a_{\eta}b_{\sigma}\in E(\Gamma_A)$ if and only if $\sigma \wedge 1\trianglelefteq \eta$.  Recall $d=d(k)$ is as in Fact \ref{treefact}.  So since $\Gamma_A$ is $k$-stable, the tree bound for $\Gamma_A$ is at most $d$.  However we have just constructed a tree of height $d$ in $\Gamma_A$, a contradiction.  Therefore our inductive construction must end after some $d'<d$-steps, meaning we obtain some $\eta \in 2^{d'}$ and $H_{\eta}\leq G$ of index at most $m^{d'}$ which is $\epsilon^{1/(4K+4)}$-excellent.
+\end{proof}
+
+\begin{corollary}
+Suppose $k\geq 2$ and $\epsilon>0$.  Then there is a polynomial $f(x)$ depending only on $k$ such that if $n$ is sufficiently large the following holds.  If $A\subseteq G=\mathbb{Z}/p\mathbb{Z}$ is $k$-stable, then there is a subspace $H\leq G$ of index at most $p^{f(1/\epsilon)}$, and a set $I\subseteq G/H$ such that $|A\Delta \bigcup_{g+H\in I} g+H|\leq \epsilon |G|$.  In other words, $A$ is close to being a union of cosets of $H$.
+\end{corollary}
+\begin{proof}
+Let $d=d(k)$ be as in Fact \ref{treefact} and set $K=f^d(k)$, where $f$ is as in Fact \ref{stillstable}(1).  Set $\epsilon_0=\epsilon^{5K+5}$.  Theorem \ref{mainth} implies there is an $\epsilon_0^{1/(5K+5)}$-excellent subgroup $H$ of $G$ with index at most $p^{d\lfloor 2/\epsilon_0\rfloor}$.  By definition of $\epsilon_0$, $H$ is $\epsilon$-excellent, and the index of $H$ is at most $p^{d\lfloor 2/\epsilon_0\rfloor} \leq p^{d(2/\epsilon_0)}=p^{f(1/\epsilon)}$, where $f(x)=2dx^{5K+5}$.  Since $H$ is $\epsilon$-excellent for $A$, we have that for all $g\in G$, $|(A-g)\cap H|=|A\cap (H+g)|\leq \epsilon |H|$ or $|(A-g)\cap H|=|A\cap (H+g)|\geq (1-\epsilon) |H|$.  Let $I=\{g+H\in G/H: |A\cap (H+g)|\geq (1-\epsilon) |H|\}$.  Let 
+\begin{align*}
+X=\bigcup_{g+H\in I}g+H\text{ and }Y=\bigcup_{g+H\in (G/H)\setminus I}g+H. 
+\end{align*}
+Then by definition of $X$, $Y$, $I$ and $\epsilon$-excellence of $H$, we have that 
+\begin{align*}
+|A\setminus X|&=|A\cap Y|\leq (\epsilon |H|)|(G/H)\setminus I|=\epsilon|H|(|G|/|H|-|I|)\text{ and}\\
+|X\setminus A|&\leq \epsilon |H||I| 
+\end{align*}
+Thus $|A\Delta X|\leq \epsilon|H|(|G|/|H|-|I|)+\epsilon |H||I| = \epsilon |H|(|G|/|H|)=\epsilon |G|$.
+\end{proof}
+
+
+\section{questions}
+
+1. When is a union of translates of a Bohr set stable? 
+
+2. find half graphs in a more robust way in the counter example.
+
+
+\section{understanding bohr sets}
+
+Suppose $B=(K,\rho)$ and $A=B+x$.  
+
+\begin{lemma}
+If $\rho<1/8$, there is a translate $B+y$ disjoint from $B$.
+\end{lemma}
+\begin{proof}
+Let $N$ be the maximum order of an element in $G$.  Suppose $x\in G$ has order $N$.  Fix $\gamma \in K$. Then $\{\gamma(i x):1\leq i\leq N-1\}$ is the set of $N$-th roots of unity in $\mathbb{T}$ (I think...).  Let $z$ be an $N$-th root of unity such that $|z-1|>1/3$. Let $y=\gamma^{-1}(z)$.  Suppose towards a contradiction that $B\cap (B+y)\neq \emptyset$.  Then there is $x\in B\cap (B+y)$.  This means since $\gamma\in K$ and $x\in B$ that $|\gamma(x)-1|\leq \rho$.  On the other hand, $x\in B+y$ implies $x-y\in B$, so $|\gamma(x-y)-1|\leq \rho$.  Let $\gamma(x)=e^{2\pi i \theta}$ and $\gamma(y)=e^{2\pi i \eta}$.  Note $\gamma(x-y)=\gamma(x)/\gamma(y)=e^{2\pi i (\theta - \eta)}$.  Note our assumptions imply $|\gamma(x)-1|=\sqrt{2}\sqrt{1-\cos (\theta)}\leq \rho$ and $|\gamma(y)-1|=\sqrt{2}\sqrt{1-\cos (\eta)}=|z-1|>1/3\geq 2\rho$, and $|\gamma(x-y)-1|=\sqrt{2}\sqrt{1-\cos (\theta-\eta)}\leq \rho$.  The last inequality implies 
+$$
+1-2\rho^2\leq \cos(\theta-\eta)=\cos(\theta)\cos(\eta)+\sin(\theta)\sin(\eta).
+$$
+Note $\sqrt{2}\sqrt{1-\cos(\eta)}>2\rho$ implies $1-8\rho>\cos(\eta)$, which implies $|\cos (\theta)\cos(\eta)|<1-8\eta$.  Note $\sqrt{2}\sqrt{1-\cos(\theta)}\leq \rho$ implies $1-2\rho^2\leq \cos (\theta)$, which implies 
+$$
+|\sin(\theta)|=\sqrt{1-\cos^2(\theta)}\leq \sqrt{1-(1-2\rho^2)^2}=\sqrt{2}\rho \sqrt{1-2\rho^2}<\sqrt{2}\rho<2\rho (4-\rho),
+$$
+where the last inequality is because $\rho<1$.  Thus $|\sin(\theta)\sin(\eta)|<2\rho (4-\rho)$.  Combining these bounds we obtain that 
+$$
+|\cos(\theta)\cos(\eta)+\sin(\theta)\sin(\eta)|\leq |\cos(\theta)\cos(\eta)|+|\sin(\theta)\sin(\eta)|<1-8\rho +2\rho(4-\rho)<1-2\rho^2,
+$$
+contradicting our assumption that $1-2\rho^2\leq \cos(\theta-\eta)=\cos(\theta)\cos(\eta)+\sin(\theta)\sin(\eta)$.
+\end{proof}
+
+\begin{lemma}
+
+\end{lemma}
+
+\begin{lemma}
+Suppose $G=\mathbb{Z}/NZ$ where $N$ is a large prime number, $A\subseteq G$ is a union of translates of $B$ where $B=B(K,\rho)$ is a regular Bohr set and $\rho \in [?,?]$.  Suppose $(x+B)\subseteq A$ and $(y+B)\cap A=\emptyset$.  Let $m=\lfloor \rho N^{1/|K|}/2\rfloor$.  If $|x-y|<m/k$, then $A$ is not $k$-stable.
+\end{lemma}
+\begin{proof}
+Because $A$ is a union of translates of $B$ which contains some but not all translates of $B$, there is a maximal $x\in G$ such that for all $0\leq y\leq x$, $(x+B)\subseteq A$.
+
+
+By Lemma 3.3 in ''finite fields ten years on'', $B$ contains an arithmetic progression of size at least $\rho N^{1/|K|}$ centered at zero. Let $d$ be the common difference and $m=\lfloor \rho N^{1/|K|}/2\rfloor$, so that $B$ contains $C=\{0,d,2d,\ldots, md, -d, -2d,\ldots, -md\}$.  Then $C+x\subseteq A$ and $(C+y)\cap A=\emptyset$.  Without loss assume $C+x<C+y$ and $x=0$.  Let $\epsilon=([y/d]d-y)/N$.  Since $N$ is large, we may assume $\epsilon$ is really small.  Let $\epsilon'\in [\epsilon,2\epsilon]$ be so that $B'=B(K,\epsilon')\prec_{\epsilon'}B$ ($\epsilon'$ is still really small).  Then $B'+B\approx B$ (deal with this later), so for now lets assume $C+[y/d]d+y\subseteq B+y$, so that we can assume we have some integer $\ell$ so that $C+\ell d \subseteq B+y$, and by assumption $|\ell d-x|=|\ell d|\leq 1+m/k$.
+
+Now let $v_1=1$ and $u_1=2$.  At stage $i$, let $v_{i+1}=u_i(1+\ell/m)$ and $u_{i+1}=v_{i+1}+1$. Note this makes sense until stage ???.
+
+Let $a_u=md+md/u$ and $b_u=md/u$.  Then $a_u-b_v=md(1+1/u-1/v)$.  So $a_u-b_v\in C$ if $(1/u-1/v)\in [-1,0]$ and $a_u-b_v\in C+\ell d$ if $(1/u-1/v)\in [\ell/m-2,\ell/m]$.
+
+
+Suppose $i\leq j$.  The $1/u_i-1/v_j =(v_j-u_i)/u_iv_j \leq (v_j-v_{j-1})/u_iv_j =-1/u_iv_j\in [-1,1]$.  Suppose $i>j$.  Then 
+$$
+1/u_i-1/v_j =(v_j-u_i)/u_iv_j>((1+
+$$
+\end{proof}
+
+
+ 
+
+
+
+
+\bibliography{/Users/rickysellers/Desktop/science1.bib}
+\bibliographystyle{amsplain}
+
+
+
+
+
+\end{document}
